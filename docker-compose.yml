@@ -1,0 +1,30 @@
+
+version: '3.8'
+services:
+  discount:
+    image: hashorg/hash-mock-discount-service
+    ports:
+      - "50051:${DISCOUNT_SERVICE_PORT}"
+    networks:
+      - htc-network
+
+  cart:
+    build: .
+    ports:
+      - "3000:${CART_SERVICE_PORT}"
+    environment:
+      SERVICE_HOST: "${CART_SERVICE_HOST}"
+      SERVICE_PORT: "${CART_SERVICE_PORT}"
+    volumes:
+      - logs:/app/logs
+    networks:
+      - htc-network
+    restart: on-failure
+    depends_on:
+      - discount
+
+networks:
+  htc-network:
+
+volumes:
+  logs:
