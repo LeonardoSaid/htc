@@ -1,6 +1,8 @@
 import unittest
 import pytest
 
+from src.repositories.product import ProductRepository
+from tests.unit.fixtures.product import PRODUCT_REPOSITORY_LIST
 
 class ProductRepositoryTest(unittest.TestCase):
     mocker = None
@@ -12,8 +14,7 @@ class ProductRepositoryTest(unittest.TestCase):
     def setUp(self):
         pass
 
-    def test_get_discount_percentage_success(self):
-        pass
-
-    def test_get_discount_percentage_raises_error(self):
-        pass
+    def test_load_data_and_get_products_successfully(self):
+        product_repository = ProductRepository()
+        products = product_repository.get_products()
+        assert products == PRODUCT_REPOSITORY_LIST
