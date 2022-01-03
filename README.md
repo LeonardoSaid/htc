@@ -4,6 +4,8 @@ Repositório dedicado à resolução do desafio: [https://github.com/hashlab/hir
 
 O arquivo `swagger.yaml` presente na raiz do projeto descreve a API desenvolvida no formato OpenAPI Specification.
 
+OBS - A data da black friday pode ser alterada em `src/config/settings.py`, formato deve estar em `DD/MM/YYYY`
+
 ## **Requisitos**
 
 - [Docker](https://docs.docker.com/install/)
