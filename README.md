@@ -27,6 +27,9 @@ DISCOUNT_SERVICE_PORT=50051
 make build
 ```
 
+> :warning: O comando `make build` pode levar alguns minutos para terminar!
+
+
 ## Execução
 Com as imagens geradas execute o comando:
 ```
