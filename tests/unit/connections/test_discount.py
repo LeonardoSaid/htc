@@ -1,12 +1,9 @@
 import unittest
 import pytest
-import grpc
 
 from src.connections.discount import DiscountConnection
-from src.connections.discount_grpc import discount_pb2_grpc
-from src.utils.exceptions import ServerException
 
-from tests.unit.fixtures.discount import MockStub, MockResponse
+from tests.unit.fixtures.discount import MockStub
 
 
 class DiscountConnectionTest(unittest.TestCase):
@@ -17,7 +14,7 @@ class DiscountConnectionTest(unittest.TestCase):
         self.mocker = mocker
 
     def setUp(self):
-        def any_function(self, *varargs, **kwargs):
+        def any_function(self, *varargs, **kwargs):  # pylint: disable=W0613
             self.stub = MockStub()
 
         self.mocker.patch.object(DiscountConnection, "__init__", any_function)

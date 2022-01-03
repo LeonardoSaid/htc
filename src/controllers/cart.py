@@ -17,7 +17,7 @@ from utils.exceptions import (
 
 class CartController:
 
-    async def checkout(self, request):
+    async def checkout(self, request):  # pylint: disable=R0911
         try:
             body = await request.json()
 

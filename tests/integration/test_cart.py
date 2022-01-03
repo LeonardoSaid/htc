@@ -1,4 +1,3 @@
-import requests
 import unittest
 import pytest
 
@@ -106,8 +105,8 @@ class CartIntegrationTest(unittest.TestCase):
         assert json['data']['total_amount'] == fixture['total_amount']
         assert len(json['data']['products']) == len(fixture['products'])
         for index, product in enumerate(json['data']['products']):
-            product['id'] == fixture['products'][index]['id']
-            product['quantity'] == fixture['products'][index]['quantity']
-            product['unit_amount'] == fixture['products'][index]['unit_amount']
-            product['total_amount'] == fixture['products'][index]['total_amount']
-            product['is_gift'] == fixture['products'][index]['is_gift']
+            assert product['id'] == fixture['products'][index]['id']
+            assert product['quantity'] == fixture['products'][index]['quantity']
+            assert product['unit_amount'] == fixture['products'][index]['unit_amount']
+            assert product['total_amount'] == fixture['products'][index]['total_amount']
+            assert product['is_gift'] == fixture['products'][index]['is_gift']

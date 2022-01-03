@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 
 
-class CheckoutProductModel(BaseModel):
+class CheckoutProductModel(BaseModel):  # pylint: disable=R0903
     id: int
     quantity: int = Field(
         gt=0
@@ -12,7 +12,7 @@ class CheckoutProductModel(BaseModel):
     is_gift: bool
 
 
-class CheckoutCartModel(BaseModel):
+class CheckoutCartModel(BaseModel):  # pylint: disable=R0903
     total_amount: int
     total_amount_with_discount: int
     total_discount: int
