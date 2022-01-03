@@ -40,3 +40,20 @@ CART_LIST_PRODUCT_NOT_FOUND = {
 CART_LIST_EMPTY = {
     "products": []
 }
+
+CART_LIST_INVALID_QUANTITY = {
+    "products": [
+        {
+            "id": 1,
+            "quantity": -1
+        }
+    ]
+}
+
+CART_LIST_INVALID_ID = {
+    "products": [
+        {
+            "quantity": 1
+        }
+    ]
+}

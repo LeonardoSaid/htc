@@ -54,3 +54,35 @@ CART_CHECKOUT_INVALID_PRODUCT_ERROR = {
         }
     ]
 }
+
+CART_CHECKOUT_INVALID_QUANTITY_ERROR = {
+    "data": None,
+    "messages": [
+        {
+            "code": "E002",
+            "description": "Invalid value to field",
+            "field": "quantity"
+        }
+    ]
+}
+
+CART_CHECKOUT_INVALID_ID_ERROR = {
+    "data": None,
+    "messages": [
+        {
+            "code": "E002",
+            "description": "Invalid value to field",
+            "field": "id"
+        }
+    ]
+}
+
+CART_CHECKOUT_INVALID_PAYLOAD_ERROR = {
+    "data": None,
+    "messages": [
+        {
+            "code": "E001",
+            "description": "Invalid body payload"
+        }
+    ]
+}
