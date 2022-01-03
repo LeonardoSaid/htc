@@ -1,3 +1,6 @@
+[MASTER]
+init-hook='import sys; sys.path.append("/app")'
+
 [MESSAGES CONTROL]
 disable=C,E,F,I,R,W,RP
 enable=bad-str-strip-call,
@@ -134,3 +137,6 @@ min-public-methods=1
 
 # Maximum number of public methods for a class (see R0904).
 max-public-methods=10
+
+[TYPECHECK]
+ignored-classes=CheckoutCartModel
