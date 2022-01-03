@@ -43,7 +43,7 @@ PRODUCT_REPOSITORY_LIST = [{
     "is_gift": True
 }]
 
-PRODUCT_MODEL_LIST = [
+PRODUCT_LIST_NOT_FOUND_EXCEPTION = [
     ProductModel(
         id=1,
         quantity=1
@@ -54,74 +54,13 @@ PRODUCT_MODEL_LIST = [
     )
 ]
 
-CHECKOUT_CART_WITH_BLACK_FRIDAY_GIFT = {
-    "total_amount": 2000,
-    "total_amount_with_discount": 0,
-    "total_discount": 0,
-    "products": [
-        {
-            "id": 1,
-            "quantity": 1,
-            "unit_amount": 1000,
-            "total_amount": 1000,
-            "discount": 1,
-            "is_gift": False
-        },
-        {
-            "id": 1,
-            "quantity": 2,
-            "unit_amount": 500,
-            "total_amount": 1000,
-            "discount": 1,
-            "is_gift": False
-        }
-    ]
-}
-
-CHECKOUT_CART_WITH_DISCOUNT = {
-    "total_amount": 2000,
-    "total_amount_with_discount": 0,
-    "total_discount": 0,
-    "products": [
-        {
-            "id": 1,
-            "quantity": 1,
-            "unit_amount": 1000,
-            "total_amount": 1000,
-            "discount": 1,
-            "is_gift": False
-        },
-        {
-            "id": 1,
-            "quantity": 2,
-            "unit_amount": 500,
-            "total_amount": 1000,
-            "discount": 1,
-            "is_gift": False
-        }
-    ]
-}
-
-CHECKOUT_CART_WITHOUT_DISCOUNT = {
-    "total_amount": 2000,
-    "total_amount_with_discount": 0,
-    "total_discount": 0,
-    "products": [
-        {
-            "id": 1,
-            "quantity": 1,
-            "unit_amount": 1000,
-            "total_amount": 1000,
-            "discount": 1,
-            "is_gift": False
-        },
-        {
-            "id": 1,
-            "quantity": 2,
-            "unit_amount": 500,
-            "total_amount": 1000,
-            "discount": 1,
-            "is_gift": False
-        }
-    ]
-}
+PRODUCT_LIST_INVALID_PRODUCT_EXCEPTION = [
+    ProductModel(
+        id=6,
+        quantity=1
+    ),
+    ProductModel(
+        id=2,
+        quantity=2
+    )
+]
