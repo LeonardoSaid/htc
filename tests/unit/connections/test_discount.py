@@ -1,7 +1,12 @@
 import unittest
 import pytest
+import grpc
 
 from src.connections.discount import DiscountConnection
+from src.connections.discount_grpc import discount_pb2_grpc
+from src.utils.exceptions import ServerException
+
+from tests.unit.fixtures.discount import MockStub, MockResponse
 
 
 class DiscountConnectionTest(unittest.TestCase):
@@ -12,12 +17,18 @@ class DiscountConnectionTest(unittest.TestCase):
         self.mocker = mocker
 
     def setUp(self):
-        pass
+        def any_function(self, *varargs, **kwargs):
+            self.stub = MockStub()
 
-    def test_get_discount_percentage_success(self):
-        result = DiscountConnection().get_discount_percentage(product_id=1)
-        assert result == 0.5
+        self.mocker.patch.object(DiscountConnection, "__init__", any_function)
+
+    def test_get_discount_percentage_successfully(self):
+        result = DiscountConnection(host="localhost:12345").get_discount_percentage(product_id=1)
+        assert result == 0.05
 
     def test_get_discount_percentage_raises_error(self):
-        with pytest.raises(Exception):
-            DiscountConnection().get_discount_percentage(product_id=1)
+        self.mocker.patch.object(MockStub, 'GetDiscount', side_effect=Exception)
+        try:
+            DiscountConnection(host="localhost:12345").get_discount_percentage(product_id=1)
+        except Exception as error:
+            assert type(error).__name__ == "ServerException"

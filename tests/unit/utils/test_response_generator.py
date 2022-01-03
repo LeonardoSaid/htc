@@ -5,6 +5,7 @@ import pytest
 from starlette.testclient import TestClient
 from src.utils.response_generator import json_response
 
+
 class ResponseGeneratorTest(unittest.TestCase):
     mocker = None
 
@@ -23,7 +24,7 @@ class ResponseGeneratorTest(unittest.TestCase):
 
         assert response.status_code == 200
         assert json["messages"] == []
-        assert json["data"] == None
+        assert json["data"] is None
 
     def test_json_response_returns_dict_data(self):
         async def app(scope, receive, send):
@@ -70,5 +71,5 @@ class ResponseGeneratorTest(unittest.TestCase):
         json = response.json()
 
         assert response.status_code == 200
-        assert json["messages"] == [{"foo": "bar"},{"test": "test"}]
-        assert json["data"] == None
+        assert json["messages"] == [{"foo": "bar"}, {"test": "test"}]
+        assert json["data"] is None

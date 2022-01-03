@@ -4,6 +4,7 @@ import pytest
 from src.repositories.product import ProductRepository
 from tests.unit.fixtures.product import PRODUCT_REPOSITORY_LIST
 
+
 class ProductRepositoryTest(unittest.TestCase):
     mocker = None
 
