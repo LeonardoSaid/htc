@@ -2,12 +2,14 @@
 
 Repositório dedicado à resolução do desafio: [https://github.com/hashlab/hiring/tree/master/challenges/pt-br/new-backend-challenge](https://github.com/hashlab/hiring/tree/master/challenges/pt-br/new-backend-challenge)
 
+O arquivo `swagger.yaml` presente na raiz do projeto descreve a API desenvolvida no formato OpenAPI Specification.
+
 ## **Requisitos**
 
 - [Docker](https://docs.docker.com/install/)
 - [Docker-compose](https://docs.docker.com/compose/install/)
 - Arquivo .env para configurar as variáveis default do projeto
-- Ambiente Unix/Linux-based para rodar os comandos do Makefile
+- Ambiente Unix/Linux-based para utilizar os comandos do Makefile
 ## Setup
 
 1. Configurar o arquivo .env na raiz do projeto com os valores da porta e host dos serviços descritos no `docker-compose.yml`, exemplo:
@@ -24,6 +26,9 @@ DISCOUNT_SERVICE_PORT=50051
 ```
 make build
 ```
+
+> :warning: O comando `make build` pode levar alguns minutos para terminar!
+
 
 ## Execução
 Com as imagens geradas execute o comando:
